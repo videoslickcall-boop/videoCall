@@ -17,7 +17,8 @@ const io = new Server(server);
 connectDB();
 
 // Serve frontend
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use("/vcall/api", express.static('public'));
 
 // Run every minute
 cron.schedule('* * * * *', async () => {
@@ -89,3 +90,4 @@ const PORT = process.env.PORT;
 server.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
 });
+
