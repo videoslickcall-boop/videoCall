@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // const socket = io();
-    
-    const socket = io("/", {
-        path: "/vcall/api/socket.io"
-    });
+    const socket = io();
     
     const body = document.body;
     const localVideo = document.getElementById('localVideo');
@@ -331,3 +327,4 @@ document.addEventListener('DOMContentLoaded', () => {
         statusMessage.textContent = 'HTTPS required.';
     }
 });
+
