@@ -13,13 +13,7 @@ const app = express();
 const server = http.createServer(app);
 
 // ✅ Socket.IO only on custom path
-const io = new Server(server, {
-  path: '/vcall/api/socket.io',
-  cors: {
-    origin: '*',
-    methods: ['GET', 'POST']
-  }
-});
+const io = new Server(server);
 
 // Connect to MongoDB
 connectDB();
@@ -97,3 +91,4 @@ server.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   // console.log(`📡 Socket.IO ONLY at: ws://localhost:${PORT}/vcall/api/socket.io`);
 });
+
